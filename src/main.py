@@ -1,6 +1,5 @@
 import numpy as np
 from math import sqrt, atan2
-
 #Step 1: Draw kinematic diagram of first three joints and do inverse kinematiics for position
 #Step 2: Forware kinematics on the first three joints to tget the rotation part of r0_3
 #Step 3: Find the inverse of the r0_3 matrix
@@ -20,7 +19,7 @@ y = float(input("Desired y position: "))
 z = float(input("Desired z position: "))
 
 #Inverse Kinematics
-d3 = (sqrt((x^2)+(y^2))) - a3 - a4 - a5
+d3 = (sqrt((x**2)+(y**2))) - a3 - a4 - a5
 
 theta_2 = np.arctan2(y/x)
 
@@ -28,7 +27,7 @@ theta_2 = np.arctan2(y/x)
 r0_1 = np.eye(3)
 
 r1_2 = np.dot(np.array([[np.cos(theta_2), -np.sin(theta_2), 0],
-                [np.sin(theta_2), np.cos(theta_2), 0]
+                [np.sin(theta_2), np.cos(theta_2), 0],
                 [0,0,1]]),r0_1) 
 
 r2_3 = np.eye(3)
